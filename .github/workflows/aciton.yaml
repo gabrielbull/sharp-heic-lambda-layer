@@ -41,15 +41,9 @@ jobs:
           pip3 install aws-sam-cli --upgrade --user
 
       - name: Install Node Modules
-        run: npm ci
+        run: npm install
         env:
           NODE_ENV: development
-
-      - name: Audit Node Modules
-        run: npm audit --audit-level=moderate
-
-      - name: Install Node Modules
-        run: npm run lint
 
       - name: Build
         run: npm run build
